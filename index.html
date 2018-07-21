@@ -33,21 +33,12 @@
   
   function Openweb() {
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-     if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       document.getElementsByTagName("STYLE")[0].outerHTML = "";
-       document.body.outerHTML = xhttp.responseText;
-       document.title = "UNBLOCKED!"
-       
-     }
-    };
     var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
     var origin = document.getElementById("websitename").value.replace(prototrans,"");
     var origin = "https://scratch.mit.edu";
     alert(origin)
     
-    xhttp.open("GET", document.getElementById("websitename").value, true);
+    xhttp.open("GET", document.getElementById("websitename").value, false);
     
     try {
     xhttp.setRequestHeader("origin", origin);
@@ -59,6 +50,10 @@
     catch {}
       
     xhttp.send();
+    // Typical action to be performed when the document is ready:
+    document.getElementsByTagName("STYLE")[0].outerHTML = "";
+    document.body.outerHTML = xhttp.responseText;
+    document.title = "UNBLOCKED!"
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
 
