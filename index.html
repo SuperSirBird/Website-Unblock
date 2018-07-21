@@ -43,9 +43,14 @@
     catch {}
       
     xhttp.send();
-    // Typical action to be performed when the document is ready:
+    // Clear Style
     document.getElementsByTagName("STYLE")[0].outerHTML = "";
-    document.body.outerHTML = xhttp.responseText;
+    
+    // Set HTML and set proper fetches.
+    var webhtml = xhttp.responseText;
+    document.body.outerHTML = webhtml;
+    
+    // Done
     document.title = "UNBLOCKED!"
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
