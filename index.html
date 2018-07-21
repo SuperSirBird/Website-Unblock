@@ -32,19 +32,22 @@
 <script>
   
   function Openweb() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
        document.getElementsByTagName("STYLE")[0].outerHTML = "";
        document.body.outerHTML = xhttp.responseText;
        document.title = "UNBLOCKED!"
        
-    }
-  };
-  xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, true);
-  xhttp.setRequestHeader("Origin", document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/")));
-  xhttp.send();
+     }
+    };
+    var origin = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/"))
+   alert(origin)
+    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, true);
+    
+    xhttp.setRequestHeader(":authority:", origin);
+    xhttp.send();
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
 
