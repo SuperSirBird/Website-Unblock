@@ -38,7 +38,7 @@
     var origin = "https://scratch.mit.edu";
     alert(origin)
     
-    xhttp.open("GET", document.getElementById("websitename").value, false);
+    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, false);
     
     try {
     xhttp.setRequestHeader("origin", origin);
