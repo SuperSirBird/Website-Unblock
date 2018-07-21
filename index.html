@@ -35,12 +35,11 @@
     var xhttp = new XMLHttpRequest();
     var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
     var origin = document.getElementById("websitename").value.replace(prototrans,"");
-    alert(origin)
+    console.log(origin + " found")
     
     xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, false);
     
     try {
-    xhttp.setRequestHeader("origin", origin);
     xhttp.setRequestHeader("Access-Control-Request-Origin", origin);
     } 
     catch {}
