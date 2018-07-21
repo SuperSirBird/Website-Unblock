@@ -49,7 +49,7 @@
     xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, true);
     
     try {
-    xhttp.setRequestHeader(":authority:", origin);}
+    xhttp.setRequestHeader("origin", origin);}
     catch {}
       
     xhttp.send();
