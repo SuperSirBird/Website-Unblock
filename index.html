@@ -43,8 +43,7 @@
      }
     };
     var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
-    alert(prototrans);
-    var origin = document.getElementById("websitename").value.substring(prototrans,document.getElementById("websitename").value.indexOf("/"));
+    var origin = document.getElementById("websitename").value.replace(prototrans,"")
     
     xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, true);
     
