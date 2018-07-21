@@ -42,11 +42,14 @@
        
      }
     };
-    var origin = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/"))
-   alert(origin)
+    var origin = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/"));
+    alert(origin);
     xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, true);
     
-    xhttp.setRequestHeader(":authority:", origin);
+    try {
+    xhttp.setRequestHeader(":authority:", origin);}
+    catch {}
+      
     xhttp.send();
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
