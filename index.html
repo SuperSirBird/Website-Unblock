@@ -23,7 +23,22 @@
 <center>
 <br><br><br><br><br><br><br><br><br><br>
   <h1>Website Unblocker!</h1>
-<input placeholder="Website url here..." id="websitename"><button>Unblock!</button>
+<input placeholder="Website url here..." id="websitename"><button onclick="Openweb()">Unblock!</button>
   </center>
 
-<script>//Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge</script>
+<script>
+  
+  function Openweb() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       document = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", document.getElementById("websitename").value, true);
+  xhttp.send();
+  }
+  //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
+
+</script>
