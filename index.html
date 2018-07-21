@@ -33,7 +33,7 @@
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
-       document.innerHTML = xhttp.responseText;
+       alert(xhttp.responseText);
     }
   };
   xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, true);
