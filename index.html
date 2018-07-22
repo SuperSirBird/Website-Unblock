@@ -31,6 +31,8 @@
 
 <script>
   
+  var webproxy = "https://cors-anywhere.herokuapp.com/";
+  
   function Openweb() {
     
     var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
@@ -39,7 +41,7 @@
     
     var xhttp = new XMLHttpRequest();
     
-    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, false);
+    xhttp.open("GET", webproxy + document.getElementById("websitename").value, false);
       
     xhttp.send();
     // Clear Style
@@ -47,6 +49,8 @@
     
     // Set HTML and set proper fetches.
     var webhtml = xhttp.responseText;
+    webhtml = webhtml.replace("src=\"/","src=\"" + webproxy + origin);
+    webhtml = webhtml.replace("href=\"/","href=\"" + webproxy + origin);
     document.body.outerHTML = webhtml;
     
     // Done
