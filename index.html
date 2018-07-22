@@ -39,10 +39,7 @@
     
     var xhttp = new XMLHttpRequest();
     
-    xhttp.open("GET", document.getElementById("websitename").value, false);
-      
-    //try {xhttp.setRequestHeader(":authority:", origin);xhttp.setRequestHeader(":method:", "GET");}
-    //catch {}
+    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, false);
       
     xhttp.send();
     // Clear Style
