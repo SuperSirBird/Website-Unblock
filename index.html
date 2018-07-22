@@ -59,8 +59,8 @@
     webhtml = webhtml.split("href=\"/").join("href=\"" + origin)
     
     // Some websites have dot
-    webhtml = webhtml.split("src=\"./").join("src=\"" + origin)
-    webhtml = webhtml.split("href=\"./").join("href=\"" + origin)
+    webhtml = webhtml.split("src=\"./").join("src=\"" + origin) // the ./ mean website true origin
+    webhtml = webhtml.split("href=\"./").join("href=\"" + origin) // the ./ mean website true origin
     
     // IT WORKS WHEN FILES ARE IN A DIFRENT FOLDER e.g (href="/lol/pro.html")
     // BUT NOT WHEN IN SAME LOCATION e.g (href="boi.html")
