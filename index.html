@@ -50,18 +50,18 @@
     // Set HTML and set proper fetches.
     var webhtml = xhttp.responseText;
     
-    document.documentElement.innerHTML = webhtml;
-    
-    //webhtml = webhtml.split("src=\"//").join("src=\"https://")
-    //webhtml = webhtml.split("href=\"//").join("href=\"https://")
-    //webhtml = webhtml.split("src=\"/").join("src=\"" + webproxy + origin)
-    //webhtml = webhtml.split("href=\"/").join("href=\"" + webproxy + origin)
+    webhtml = webhtml.split("src=\"//").join("src=\"https://")
+    webhtml = webhtml.split("href=\"//").join("href=\"https://")
+    webhtml = webhtml.split("src=\"/").join("src=\"" + webproxy + origin)
+    webhtml = webhtml.split("href=\"/").join("href=\"" + webproxy + origin)
     
     //webhtml = webhtml.split("href=\"").join("href=\"" + webproxy)
     //webhtml = webhtml.split("src=\"").join("src=\"" + webproxy)
     
+    // IT WORKS WHEN FILES ARE IN A DIFRENT FOLDER e.g (href="/lol/pro.html")
+    // BUT NOT WHEN IN SAME LOCATION e.g (href="boi.html")
     
-    //document.body.outerHTML = webhtml;
+    document.body.outerHTML = webhtml;
     
     // Done
     document.title = "UNBLOCKED!"
