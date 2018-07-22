@@ -50,10 +50,17 @@
     // Set HTML and set proper fetches.
     var webhtml = xhttp.responseText;
     
+    // Scratch fix
     webhtml = webhtml.split("src=\"//").join("src=\"https://")
     webhtml = webhtml.split("href=\"//").join("href=\"https://")
-    webhtml = webhtml.split("src=\"/").join("src=\"" + webproxy + origin)
-    webhtml = webhtml.split("href=\"/").join("href=\"" + webproxy + origin)
+    
+    // For files in diffrent folders
+    webhtml = webhtml.split("src=\"/").join("src=\"" + origin)
+    webhtml = webhtml.split("href=\"/").join("href=\"" + origin)
+    
+    // Some websites have dot
+    webhtml = webhtml.split("src=\"./").join("src=\"" + origin)
+    webhtml = webhtml.split("href=\"./").join("href=\"" + origin)
     
     //webhtml = webhtml.split("href=\"").join("href=\"" + webproxy)
     //webhtml = webhtml.split("src=\"").join("src=\"" + webproxy)
