@@ -91,7 +91,8 @@
     for (i=0;i<links.length-1;i++) { //.getAttribute("class"); 
       
       if (links[i].getAttribute('href').substring(0,1) == "/") {
-       links[i].setAttribute("onclick","Openweb(true, \"" + prototrans + trueorigin + "shduiahoiuhjska" + "\")"); //links[i].getAttribute("href")
+       // SCRIPT NOT RUNNING FOR SOME REASON TRY IMPLEMENTING INTO OTHER ONE
+        links[i].setAttribute("onclick","Openweb(true, \"" + prototrans + trueorigin + "\")"); //links[i].getAttribute("href")
       } else {
         links[i].setAttribute("onclick","Openweb(true, \"" + links[i].getAttribute("href") + "\")");
       }
