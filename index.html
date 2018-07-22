@@ -32,10 +32,12 @@
 <script>
   
   function Openweb() {
-    var xhttp = new XMLHttpRequest();
+    
     var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
     var origin = document.getElementById("websitename").value.replace(prototrans,"");
     console.log(origin + " found")
+    
+    var xhttp = new XMLHttpRequest();
     
     xhttp.open("GET", document.getElementById("websitename").value, false);
       
