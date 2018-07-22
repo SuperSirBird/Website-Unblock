@@ -60,6 +60,9 @@
     webhtml = webhtml.split("src=\"/").join("src=\"" + webproxy + origin)
     webhtml = webhtml.split("href=\"/").join("href=\"" + webproxy + origin)
     
+    webhtml = webhtml.split("href=\"").join("href=\"" + webproxy)
+    webhtml = webhtml.split("src=\"").join("src=\"" + webproxy)
+    
     
     document.body.outerHTML = webhtml;
     
