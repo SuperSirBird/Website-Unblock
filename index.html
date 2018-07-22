@@ -37,10 +37,10 @@
     var origin = document.getElementById("websitename").value.replace(prototrans,"");
     console.log(origin + " found")
     
-    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/" + document.getElementById("websitename").value, false);
+    xhttp.open("GET", document.getElementById("websitename").value, false);
       
-    try {xhttp.setRequestHeader(":authority:", origin);xhttp.setRequestHeader(":method:", "GET");}
-    catch {}
+    //try {xhttp.setRequestHeader(":authority:", origin);xhttp.setRequestHeader(":method:", "GET");}
+    //catch {}
       
     xhttp.send();
     // Clear Style
