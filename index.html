@@ -49,7 +49,10 @@
     
     var xhttp = new XMLHttpRequest();
     
-    xhttp.open("GET", webproxy + document.getElementById("websitename").value, false);
+    if (inpage) {
+    xhttp.open("GET", webproxy + newweb, false);}
+    else {
+    xhttp.open("GET", webproxy + document.getElementById("websitename").value, false);}
       
     xhttp.send();
     // Clear Style
