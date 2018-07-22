@@ -69,6 +69,8 @@
     
     // Done
     document.title = "UNBLOCKED!"
+    var links = document.getElementsByTagName("A");
+    for (i=0;i<links.length;i++) {links[i].href="";links[i].onclick="alert('Redirect fail!');"}
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
 
