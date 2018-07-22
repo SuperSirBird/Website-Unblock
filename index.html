@@ -88,9 +88,9 @@
     var links = document.getElementsByTagName("A");
     for (i=0;i<links.length;i++) { //.getAttribute("class"); 
       if (links[i].getAttribute("href").substring(0,1) == "/") {
-        links[i].setAttribute("onclick","Openweb(true, \" prototrans + trueorigin + links[i].getAttribute("href") + "\")");
+        links[i].setAttribute("onclick","Openweb(true, "\"" prototrans + trueorigin + links[i].getAttribute("href") + "\")");
       } else {
-        links[i].setAttribute("onclick","Openweb(true, \" links[i].getAttribute("href") + "\")");
+        links[i].setAttribute("onclick","Openweb(true, "\"" links[i].getAttribute("href") + "\")");
       }
       
       links[i].removeAttribute("href");}
