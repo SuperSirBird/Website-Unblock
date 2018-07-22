@@ -50,21 +50,18 @@
     // Set HTML and set proper fetches.
     var webhtml = xhttp.responseText;
     
-    //webhtml = webhtml.replace("src=\"//","src=\"https://");
-    //webhtml = webhtml.replace("href=\"//","href=\"https://");
-    //webhtml = webhtml.replace("src=\"/","src=\"" + webproxy + origin);
-    //webhtml = webhtml.replace("href=\"/","href=\"" + webproxy + origin);
+    document.documentElement.innerHTML = webhtml;
     
-    webhtml = webhtml.split("src=\"//").join("src=\"https://")
-    webhtml = webhtml.split("href=\"//").join("href=\"https://")
-    webhtml = webhtml.split("src=\"/").join("src=\"" + webproxy + origin)
-    webhtml = webhtml.split("href=\"/").join("href=\"" + webproxy + origin)
+    //webhtml = webhtml.split("src=\"//").join("src=\"https://")
+    //webhtml = webhtml.split("href=\"//").join("href=\"https://")
+    //webhtml = webhtml.split("src=\"/").join("src=\"" + webproxy + origin)
+    //webhtml = webhtml.split("href=\"/").join("href=\"" + webproxy + origin)
     
-    webhtml = webhtml.split("href=\"").join("href=\"" + webproxy)
-    webhtml = webhtml.split("src=\"").join("src=\"" + webproxy)
+    //webhtml = webhtml.split("href=\"").join("href=\"" + webproxy)
+    //webhtml = webhtml.split("src=\"").join("src=\"" + webproxy)
     
     
-    document.body.outerHTML = webhtml;
+    //document.body.outerHTML = webhtml;
     
     // Done
     document.title = "UNBLOCKED!"
