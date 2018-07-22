@@ -25,7 +25,7 @@
 <center>
 <br><br><br><br><br><br><br><br><br><br>
   <h1>Website Unblocker!</h1>
-<input placeholder="Website url here..." id="websitename"><button onclick="Openweb()">Unblock!</button>
+<input placeholder="Website url here..." id="websitename"><button onclick="Openweb(false,0)">Unblock!</button>
   </center>
   </body>
 
@@ -33,11 +33,19 @@
   
   var webproxy = "https://cors-anywhere.herokuapp.com/";
   
-  function Openweb() {
+  function Openweb(inpage,newweb) {
     
-    var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
-    var origin = document.getElementById("websitename").value.replace(prototrans,"");
-    console.log(origin + " found")
+    if (inpage) {
+      var prototrans = newweb.substring(0,newweb.indexOf("/") + 2)
+      var origin = newweb.replace(prototrans,"");
+      console.log(origin + " found")
+      document.write("<head><title>Redirecting...</title><style>h1 {font-family:sans;}</style></head><body><h1>Redirecting...</h1></body>");
+    }
+    else {
+      var prototrans = document.getElementById("websitename").value.substring(0,document.getElementById("websitename").value.indexOf("/") + 2)
+      var origin = document.getElementById("websitename").value.replace(prototrans,"");
+      console.log(origin + " found")
+    }
     
     var xhttp = new XMLHttpRequest();
     
@@ -70,9 +78,9 @@
     // Done
     document.title = "UNBLOCKED!"
     var links = document.getElementsByTagName("A");
-    for (i=0;i<links.length;i++) {
-      links[i].removeAttribute("href");
-      links[i].setAttribute("onclick","alert('No');");}
+    for (i=0;i<links.length;i++) { //.getAttribute("class"); 
+      links[i].setAttribute("onclick","Openweb(true, \"" + links[i].getAttribute("href") + "\")");
+      links[i].removeAttribute("href");}
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
 
