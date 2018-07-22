@@ -50,10 +50,17 @@
     // Set HTML and set proper fetches.
     var webhtml = xhttp.responseText;
     
-    webhtml = webhtml.replace("src=\"//","src=\"https://");
-    webhtml = webhtml.replace("href=\"//","href=\"https://");
-    webhtml = webhtml.replace("src=\"/","src=\"" + webproxy + origin);
-    webhtml = webhtml.replace("href=\"/","href=\"" + webproxy + origin);
+    //webhtml = webhtml.replace("src=\"//","src=\"https://");
+    //webhtml = webhtml.replace("href=\"//","href=\"https://");
+    //webhtml = webhtml.replace("src=\"/","src=\"" + webproxy + origin);
+    //webhtml = webhtml.replace("href=\"/","href=\"" + webproxy + origin);
+    
+    webhtml = webhtml.split("src=\"//").join("src=\"https://")
+    webhtml = webhtml.split("href=\"//").join("href=\"https://")
+    webhtml = webhtml.split("src=\"/").join("src=\"")
+    webhtml = webhtml.split("href=\"/").join("href=\"")
+    
+    
     document.body.outerHTML = webhtml;
     
     // Done
