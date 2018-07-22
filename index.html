@@ -51,6 +51,7 @@
     var webhtml = xhttp.responseText;
     
     webhtml = webhtml.replace("src=\"//","src=\"https://");
+    webhtml = webhtml.replace("href=\"//","href=\"https://");
     webhtml = webhtml.replace("src=\"/","src=\"" + webproxy + origin);
     webhtml = webhtml.replace("href=\"/","href=\"" + webproxy + origin);
     document.body.outerHTML = webhtml;
