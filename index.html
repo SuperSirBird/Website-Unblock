@@ -49,6 +49,8 @@
     
     // Set HTML and set proper fetches.
     var webhtml = xhttp.responseText;
+    src="//
+    webhtml = webhtml.replace("src=\"//","src=\"https://");
     webhtml = webhtml.replace("src=\"/","src=\"" + webproxy + origin);
     webhtml = webhtml.replace("href=\"/","href=\"" + webproxy + origin);
     document.body.outerHTML = webhtml;
