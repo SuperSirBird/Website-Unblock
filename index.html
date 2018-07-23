@@ -72,12 +72,12 @@
     webhtml = webhtml.split("href=\"//").join("href=\"https://")
     
     // For files in diffrent folders
-    webhtml = webhtml.split("src=\"/").join("src=\"" + origin)
-    webhtml = webhtml.split("href=\"/").join("href=\"" + origin)
+    webhtml = webhtml.split("src=\"/").join("src=\"" + prototrans + origin)
+    webhtml = webhtml.split("href=\"/").join("href=\"" + prototrans + origin)
     
     // Some websites have dot
-    webhtml = webhtml.split("src=\".").join("src=\"" + trueorigin) // the ./ mean website true origin
-    webhtml = webhtml.split("href=\".").join("href=\"" + trueorigin) // the ./ mean website true origin
+    webhtml = webhtml.split("src=\".").join("src=\"" + prototrans + trueorigin) // the ./ mean website true origin
+    webhtml = webhtml.split("href=\".").join("href=\"" + prototrans + trueorigin) // the ./ mean website true origin
     
     // IT WORKS WHEN FILES ARE IN A DIFRENT FOLDER e.g (href="/lol/pro.html")
     // BUT NOT WHEN IN SAME LOCATION e.g (href="boi.html")
