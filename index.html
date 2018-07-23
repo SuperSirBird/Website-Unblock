@@ -88,15 +88,7 @@
     document.title = "UNBLOCKED!"
     var newlink;
     var links = document.getElementsByTagName("A");
-    for (i=0;i<links.length-1;i++) { //.getAttribute("class"); 
-      
-      if (links[i].getAttribute('href').substring(0,1) == "/") {
-       // SCRIPT NOT RUNNING FOR SOME REASON TRY IMPLEMENTING INTO OTHER ONE
-        links[i].setAttribute("onclick","Openweb(true, \"" + prototrans + trueorigin + "\")"); //links[i].getAttribute("href")
-      } else {
-        links[i].setAttribute("onclick","Openweb(true, \"" + prototrans + trueorigin + links[i].getAttribute("href") + "\")");
-      }
-      
+    for (i=0;i<links.length-1;i++) { //.getAttribute("class");
       links[i].removeAttribute("href");}
   }
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
