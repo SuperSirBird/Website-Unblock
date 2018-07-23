@@ -35,6 +35,8 @@
   
   function Openweb(inpage,newweb) {
     
+    try {
+    
     if (inpage) {
       var prototrans = newweb.substring(0,newweb.indexOf("/") + 1)
       var origin = newweb.replace(prototrans,"");
@@ -90,7 +92,7 @@
     var links = document.getElementsByTagName("A");
     for (i=0;i<links.length-1;i++) { //.getAttribute("class");
       links[i].removeAttribute("href");}
-  }
+    } catch(err) {alert(err);}}
   //Make this a styleish prank of your freinds https://www.youtube.com/watch?v=bq9ghmgqoyc yaay bridge
 
 </script>
