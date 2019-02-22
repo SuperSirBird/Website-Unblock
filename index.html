@@ -68,8 +68,8 @@
     var webhtml = xhttp.responseText;
     
     // Scratch fix
-    webhtml = webhtml.split("src=\"//").join("src=\"https://")
-    webhtml = webhtml.split("href=\"//").join("href=\"https://")
+    webhtml = webhtml.split("src=\"//").join("src=\"https://" + origin)
+    webhtml = webhtml.split("href=\"//").join("href=\"https://" + origin)
     
     // For files in diffrent folders
     webhtml = webhtml.split("src=\"/").join("src=\"" + prototrans + origin)
